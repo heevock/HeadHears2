@@ -29,6 +29,7 @@ const togglePromotions = (event) => {
 }
 
 const profileMenuItems = ref([
+  { label: 'Профиль', icon: 'pi pi-user text-green-600 text-lg h-12 flex items-center pt-3.5', class: ' border-b' },
   { label: 'Заказы', icon: 'pi pi-shopping-bag text-green-600 text-lg h-12 flex items-center pt-3.5', class: ' border-b' },
   { label: 'Отзывы', icon: 'pi pi-comment text-green-600 text-lg h-12 flex items-center pt-3.5', class: 'border-b' },
   { label: 'Выйти', icon: 'pi pi-sign-out text-green-600 text-lg h-12 flex items-center pt-3.5', class: '' },
@@ -304,19 +305,19 @@ const splitNumber = (number) => {
     <div style="width: 80rem;" class="flex justify-between rounded-none border-none">
 
       <div class="flex mr-20">
-          <InputText class="border-none rounded-xl rounded-r-none shadow-none	bg-[#F1FBE5] px-5 h-16 w-[680px]" placeholder="Я хочу купить..." />
+          <InputText class="border-none rounded-xl shadow-none	bg-[#F1FBE5] px-5 h-16 w-[980px]" placeholder="Я хочу купить..." />
 <!--          <div class="card flex justify-content-center">-->
 <!--            <Dropdown v-model="selectedCategory" :options="categories" optionLabel="name" placeholder="Категория" class="border-none rounded-xl rounded-l-none shadow-none bg-[#F1FBE5] h-16 w-72" />-->
 <!--          </div>-->
-        <div class="card">
-          <Menubar :model="items" class="border-none rounded-xl rounded-l-none shadow-none bg-[#F1FBE5] h-16 w-[10.5rem]" />
-        </div>
+<!--        <div class="card">-->
+<!--          <Menubar :model="items" class="border-none rounded-xl rounded-l-none shadow-none bg-[#F1FBE5] h-16 w-[10.5rem]" />-->
+<!--        </div>-->
       </div>
 
       <div class="content-center">
         <Button icon="pi pi-user" class="bg-[#3DA35D] hover:bg-[#308049] border-0 mx-1" @click="visibleRight = true" />
 
-        <Sidebar v-model:visible="visibleRight" header="Профиль" position="right" class="w-[18rem] h-[20rem] border-4 border-r-0 border-green-500 mb-[30%]">
+        <Sidebar v-model:visible="visibleRight" header="Профиль" position="right" class="w-[18rem] h-[24rem] border-4 border-r-0 border-green-500 mb-[25%]">
 
           <template #header>
             <div class="flex align-items-center items-center gap-2">
@@ -326,8 +327,8 @@ const splitNumber = (number) => {
             </div>
           </template>
 
-          <div class="card flex justify-center h-48">
-            <Menu :model="profileMenuItems" class="h-[13rem] w-[15rem] border-green-400" />
+          <div class="card flex justify-center">
+            <Menu :model="profileMenuItems" class="h-fit w-fit border-green-400" />
           </div>
 
         </Sidebar>
